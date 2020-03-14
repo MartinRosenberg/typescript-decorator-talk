@@ -5,24 +5,22 @@ class Person {
         this.name = name;
     }
 
-    @AddGreet('Josh')
+    @AddGreet
     greet() {
         return `Hello, I am ${this.name}!`;
     }
 }
 
-function AddGreet(name) { // wrapping in a function: This is the Decorator-Maker (or Decorator-Factory)
-    return function (constructor, methodName, methodDescriptor) {
-        // This is the decorator itself
-        const originalMethod = methodDescriptor.value;
-        const newMethodDescriptor = {
-            configurable: methodDescriptor.configurable,
-            enumerable: methodDescriptor.enumerable,
-            value: () => `${originalMethod} Nice to meet you!` // Where you modify the method
-            // value: () => methodDescriptor.value
-        };
-        return newMethodDescriptor;
-    }
+function AddGreet(constructor, methodName, methodDescriptor) {
+    const originalMethod = methodDescriptor.value;
+    const newMethodDescriptor = {
+        configurable: methodDescriptor.configurable,
+        enumerable: methodDescriptor.enumerable,
+        get() {
+            return () => `${originalMethod.bind(this)()} Nice to meet you!`;
+        }
+    };
+    return newMethodDescriptor;
 }
 
 function buttonPress() {
