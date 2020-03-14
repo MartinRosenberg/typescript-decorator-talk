@@ -1,8 +1,4 @@
 class Greeter {
-    /**
-     * IMPORTANT: Multiple decorators run in "inside out" order
-     */
-    @AddIAm('Han')
     @AddNameCustom('Josh') // "Decorating a method"
     greet() {
         return 'Hello';
@@ -15,15 +11,6 @@ function AddIAm(myName) {
      * Eg: "Hello Josh I am Andy"
      * Hint: This will be a decorator factory (refer to AddNameCustom below)
      */
-    return function(constructor, methodName, methodDescriptor) {
-        const originalMethod = methodDescriptor.value;
-        const newMethodDescriptor = {
-            configurable: methodDescriptor.configurable,
-            enumerable: methodDescriptor.enumerable,
-            value: () => `${originalMethod()} I am ${myName}`
-        };
-        return newMethodDescriptor;
-    };
 }
 
 function AddNameCustom(name) { // wrapping in a function: This is the Decorator-Maker (or Decorator-Factory)
