@@ -7,7 +7,7 @@ class Person {
 
     @AddGreet
     greet() {
-        return `Hello, I am ${this.name}!`;
+        return `Hello, I am ${this.name}!`; // `this.name`, if called out of the scope of this class, doesn't exist
     }
 }
 
