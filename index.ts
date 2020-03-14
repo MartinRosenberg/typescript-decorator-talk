@@ -14,18 +14,18 @@ class Person {
 function AddGreet(constructor, methodName, methodDescriptor) {
     const originalMethod = methodDescriptor.value;
     const newMethodDescriptor = {
-      configurable: methodDescriptor.configurable,
-      enumerable: methodDescriptor.enumerable,
-      value: function() {
-        return `${originalMethod.bind(this)()} Nice to meet you!`;
-      }
+        configurable: methodDescriptor.configurable,
+        enumerable: methodDescriptor.enumerable,
+        value: function() {
+            return `${originalMethod.bind(this)()} Nice to meet you!`;
+        }
     };
     return newMethodDescriptor;
 }
 
 function buttonPress(name) {
-  const person = new Person(name);
-  return person.greet();
+    const person = new Person(name);
+    return person.greet();
 }
 
 document.getElementById('create-person-button')!.addEventListener('click', (e: MouseEvent) => {
