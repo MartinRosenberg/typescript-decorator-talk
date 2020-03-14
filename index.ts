@@ -1,20 +1,22 @@
 class Greeter {
-    @AddName // "Decorating a method"
+    @AddNameCustom('Josh') // "Decorating a method"
     greet() {
         return 'Hello';
     }
 }
 
-function AddName(constructor, methodName, methodDescriptor) {
-    // This is the decorator itself 
-    const originalMethod = methodDescriptor.value;
-    const newMethodDescriptor = {
-        configurable: methodDescriptor.configurable,
-        enumerable: methodDescriptor.enumerable,
-        value: () => `${originalMethod()} Bootcampers` // Where you modify the method
-        // value: () => methodDescriptor.value
-    };
-    return newMethodDescriptor;
+function AddNameCustom(name) { // wrapping in a function: This is the Decorator-Maker (or Decorator-Factory)
+    return function (constructor, methodName, methodDescriptor) {
+        // This is the decorator itself
+        const originalMethod = methodDescriptor.value;
+        const newMethodDescriptor = {
+            configurable: methodDescriptor.configurable,
+            enumerable: methodDescriptor.enumerable,
+            value: () => `${originalMethod()} Bootcampers` // Where you modify the method
+            // value: () => methodDescriptor.value
+        };
+        return newMethodDescriptor;
+    }
 }
 
 function buttonPress() {
