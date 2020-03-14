@@ -11,7 +11,6 @@ class Person {
     }
 }
 
-<<<<<<< HEAD
 function AddGreet(constructor, methodName, methodDescriptor) {
     const originalMethod = methodDescriptor.value;
     const newMethodDescriptor = {
@@ -22,14 +21,6 @@ function AddGreet(constructor, methodName, methodDescriptor) {
         }
     };
     return newMethodDescriptor;
-=======
-
-function addGreet(constructor, methodName, methodDescriptor) {
-  const originalMethod = methodDescriptor.value;
-  const newMethodDescriptor = {...methodDescriptor};
-  newMethodDescriptor.value = () => `${originalMethod()} Nice to meet you!`; // this.name is undefined so "Josh doesn't show up"
-  return newMethodDescriptor;
->>>>>>> Problem with 'this' comment
 }
 
 function buttonPress(name) {
