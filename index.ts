@@ -1,11 +1,12 @@
-class Greeter {
-    /**
-     * IMPORTANT:  Multiple decorators run "inside out" order
-     */
-    @AddIAm('Han')
-    @AddNameCustom('Josh') // "Decorating a method"
+class Person {
+    name: string;
+    
+    constructor(name) {
+        this.name = name;
+    }
+
     greet() {
-        return 'Hello';
+        return `Hello, I am ${this.name}!`;
     }
 }
 
@@ -41,11 +42,11 @@ function AddNameCustom(name) { // wrapping in a function: This is the Decorator-
 }
 
 function buttonPress() {
-    const greet = new Greeter();
-    return greet.greet();
+    const josh = new Person('Josh');
+    return josh.greet();
 }
 
-document.getElementById('create-greeter-button')!.addEventListener('click', (e: MouseEvent) => {
+document.getElementById('create-person-button')!.addEventListener('click', (e: MouseEvent) => {
     e.preventDefault();
     alert(buttonPress());
 });
