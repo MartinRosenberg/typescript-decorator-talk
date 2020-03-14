@@ -1,4 +1,7 @@
 class Greeter {
+    /**
+     * IMPORTANT:  Multiple decorators run "inside out" order
+     */
     @AddIAm('Han')
     @AddNameCustom('Josh') // "Decorating a method"
     greet() {
