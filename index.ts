@@ -12,7 +12,7 @@ function AddNameCustom(name) { // wrapping in a function: This is the Decorator-
         const newMethodDescriptor = {
             configurable: methodDescriptor.configurable,
             enumerable: methodDescriptor.enumerable,
-            value: () => `${originalMethod()} Bootcampers` // Where you modify the method
+            value: () => `${originalMethod()} ${name}` // Where you modify the method
             // value: () => methodDescriptor.value
         };
         return newMethodDescriptor;
