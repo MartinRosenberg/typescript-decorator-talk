@@ -1,0 +1,32 @@
+{
+    "name": "typescript-decorator-talk",
+    "version": "1.0.0",
+    "description": "An introduction to TypeScript decorators",
+    "keywords": [
+        "decorator",
+        "decorators",
+        "typescript"
+    ],
+    "homepage": "https://github.com/han-yan-ds/typescript-decorator-talk#readme",
+    "bugs": {
+        "url": "https://github.com/han-yan-ds/typescript-decorator-talk/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/han-yan-ds/typescript-decorator-talk.git"
+    },
+    "license": "MIT",
+    "contributors": [
+        "Han Yan (http://www.hanyancode.com/)",
+        "Martin Rosenberg <Martin.B.Rosenberg@gmail.com> (https://martinbrosenberg.com)"
+    ],
+    "main": "index.html",
+    "scripts": {
+        "build": "tsc",
+        "build:watch": "npm run build --watch",
+        "start": "open ./index.html"
+    },
+    "devDependencies": {
+        "typescript": "^3.8.3"
+    }
+}
