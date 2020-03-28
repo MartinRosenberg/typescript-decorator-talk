@@ -66,6 +66,7 @@ git checkout <branchName>
 
 ### The Branches:
 
+<<<<<<< HEAD
 -   **0Setup**
     -   Exploring our starter code and our button
 -   **1DecoratorIntro**
@@ -81,6 +82,13 @@ git checkout <branchName>
     -   Interactive = Fun
 -   **6Getters**
     -   Extra addendum
+=======
+- **5MakingItInteractive**
+  - Interactive = Fun
+
+- **6Getters
+  - Extra addendum
+>>>>>>> updated readme, changed var name
 
 ## 3. I Want Answers!
 
