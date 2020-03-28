@@ -86,7 +86,7 @@ git checkout <branchName>
 - **5MakingItInteractive**
   - Interactive = Fun
 
-- **6Getters
+- **6Getters**
   - Extra addendum
 >>>>>>> updated readme, changed var name
 
